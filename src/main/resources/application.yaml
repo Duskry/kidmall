@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://120.78.206.118:3306/main_kidmall?characterEncoding=utf8&TimeZone=Asia/Shanghai
+    #   数据库连接池 随便用一下
+    hikari:
+      maximum-pool-size: 20
+      idle-timeout: 600000
+      max-lifetime: 360000
+      connection-timeout: 500
+
+
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+logging:
+  file:
+    name: project.log
