@@ -26,7 +26,7 @@ public class DemoContrller {
     DemoService demoService;
 
     @GetMapping("/{id}")
-    CommonResult<Demo> getById(@PathVariable Integer id) {
+    CommonResult<Demo> getById(@PathVariable String id) {
         return CommonResult.success(demoService.getById(id).orElseGet(Demo::new));
     }
 
@@ -36,7 +36,7 @@ public class DemoContrller {
     }
 
     @DeleteMapping("/{id}")
-    CommonResult deleteDemo(@PathVariable Integer id) {
+    CommonResult deleteDemo(@PathVariable String id) {
         try {
             demoService.deleteDemo(id);
             return CommonResult.success();
@@ -48,7 +48,7 @@ public class DemoContrller {
     }
 
     @PutMapping("/{id}")
-    CommonResult<Demo> updatedemo(@PathVariable Integer id, @RequestBody Demo demo) {
+    CommonResult<Demo> updatedemo(@PathVariable String id, @RequestBody Demo demo) {
         //demo.setDemoId(id);
         return CommonResult.success(demoService.saveDemo(demo));
     }

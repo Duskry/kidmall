@@ -5,6 +5,7 @@ target/
 !readme.md
 ## log ###
 *.log
+*.gz
 ### STS ###
 .apt_generated
 .classpath

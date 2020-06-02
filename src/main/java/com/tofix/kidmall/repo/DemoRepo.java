@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.Optional;
 
-public interface DemoRepo extends JpaRepository<Demo, Integer> {
+public interface DemoRepo extends JpaRepository<Demo, String> {
     /**
      * 重写的查询方法 库中没有实现的基本查询 简单的连接查询和条件都是可以做到的
      *
@@ -15,7 +15,7 @@ public interface DemoRepo extends JpaRepository<Demo, Integer> {
      * @param name
      * @return demo
      */
-    Optional<Demo> findByDemoIdAndName(Integer id, String name);
+    Optional<Demo> findByDemoIdAndName(String id, String name);
 
 
     /**
@@ -25,7 +25,7 @@ public interface DemoRepo extends JpaRepository<Demo, Integer> {
      * @return demo
      */
     @Query("select d from Demo d where d.demoId=:id")
-    Demo get(Integer id);
+    Demo get(String id);
 
     /**
      * 原生查询
@@ -34,6 +34,6 @@ public interface DemoRepo extends JpaRepository<Demo, Integer> {
      * @return
      */
     @Query(value = "select * from t_demo where demoId=:id", nativeQuery = true)
-    Demo gethh(@Param("id") Integer id);
+    Demo gethh(@Param("id") String id);
 
 }

@@ -30,7 +30,7 @@ public class DemoService {
     @Autowired
     DemoRepo demoRepo;
 
-    public Optional<Demo> getById(Integer id) {
+    public Optional<Demo> getById(String id) {
         return demoRepo.findById(id);
     }
 
@@ -38,7 +38,7 @@ public class DemoService {
         return demoRepo.save(demo);
     }
 
-    public void deleteDemo(Integer id) throws ApiExcetion {
+    public void deleteDemo(String id) throws ApiExcetion {
         try {
             demoRepo.deleteById(id);
         } catch (Exception e) {
