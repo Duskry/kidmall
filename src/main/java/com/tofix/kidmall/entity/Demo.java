@@ -20,7 +20,6 @@ public class Demo implements Serializable {
     @GenericGenerator(name = "idGenerator", strategy = "uuid")
     @GeneratedValue(generator = "idGenerator")
     private String demoId;
-
     @Column
     private String name;
 }
