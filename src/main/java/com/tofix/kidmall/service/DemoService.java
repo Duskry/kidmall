@@ -12,7 +12,7 @@ import java.util.Optional;
 public interface DemoService {
 
     /**
-     * 获取demo
+     * 获取demo  查询失败是返回null
      *
      * @param id
      * @return

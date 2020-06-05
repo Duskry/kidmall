@@ -3,13 +3,15 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root
-    url: jdbc:mysql://120.78.206.118:3306/main_kidmall?characterEncoding=utf8&TimeZone=Asia/Shanghai
+    #url: jdbc:mysql://120.78.206.118:3306/main_kidmall?characterEncoding=utf8&serverTimeZone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/main_kidmall?characterEncoding=utf8&serverTimezone=Asia/Shanghai
     #   数据库连接池 随便用一下
     hikari:
       maximum-pool-size: 20
       idle-timeout: 600000
       max-lifetime: 360000
       connection-timeout: 500
+
   redis:
     host: 120.78.206.118
     port: 6379
@@ -19,8 +21,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-
     show-sql: true
+    open-in-view: true
 
 logging:
   file:

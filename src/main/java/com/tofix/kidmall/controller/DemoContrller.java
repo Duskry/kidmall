@@ -36,7 +36,7 @@ public class DemoContrller {
     }
 
     @ApiOperation("添加一个demo")
-    @PostMapping("/")
+    @PostMapping("")
     CommonResult<Demo> insertDemo(@RequestBody Demo demo) {
         return CommonResult.success(demoService.insertDemo(demo));
     }
